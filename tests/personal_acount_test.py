@@ -16,7 +16,6 @@ class TestPersonalAccount:
     @allure.title('Переход в раздел «История заказов»')
     def test_go_to_history_of_orders(self, driver_with_auth_user):
         login_page = LoginPage(driver_with_auth_user[0])
-        # login_page.go_to_page(configuration.account_profile)
         login_page.click_orders_history_button()
 
         assert login_page.get_current_url() == configuration.URL + \
